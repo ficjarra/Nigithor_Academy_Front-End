@@ -38,3 +38,9 @@ a:visited{
 
 }
 
+#error{
+
+    background-color: black;
+    color: red
+
+}

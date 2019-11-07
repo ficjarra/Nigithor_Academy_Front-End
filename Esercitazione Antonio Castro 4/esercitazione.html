@@ -19,7 +19,7 @@
         var timer;
         var flagtimer;
 
-        function setbg() {
+        function setBG() {
 
             flagtimer = true;
 
@@ -29,7 +29,7 @@
 
             document.bgColor = colors[i++];
 
-            timer = window.setTimeout(setbg, 15000)
+            timer = window.setTimeout(setBG, 15000)
 
         }
 
@@ -40,18 +40,16 @@
 
         }
 
-        /*Esercizio 2
+        //Esercizio 2
 
-        var chromemozillabookmark = browser.bookmarks.create({
+        /*function addbookmark() {
 
-            title: "Pagina di esercizi",
-            url: "file:///D:/Desktop/Robe%20portatili/Projects/Nigithor%20Academy/HTML_XHTML_CSS_JS/Esercitazione%20Antonio%20Castro%204/ex1.html"
+            browser.bookmarks.create({
 
-        });
+                title: "Pagina di esercizi",
+                url: "file:///D:/Desktop/Robe%20portatili/Projects/Nigithor%20Academy/HTML_XHTML_CSS_JS/Esercitazione%20Antonio%20Castro%204/ex1.html"
 
-        function addbookmark() {
-
-            document.getElementById("bookmark").innerHTML = "<button onclick='chromemozillabookmark'>Aggiungi</button>";
+            });
 
         }*/
 
@@ -69,15 +67,27 @@
 
         //Esercizio 5
 
-        var lm = document.lastModified;
+        var lm = new Date(document.lastModified);
         var day = new Date().getDate();
         var month = new Date().getMonth();
         var year = new Date().getFullYear();
         var hour = new Date().getHours();
 
-        function showdate() {
+        function addZero(hm) {
 
-            switch (month) {
+            if (hm < 10) {
+
+                hm = "0" + hm;
+
+            }
+
+            return hm;
+
+        }
+
+        function showDate() {
+
+            switch (month + 1) {
 
                 case 1:
 
@@ -142,7 +152,7 @@
             }
 
             document.getElementById("date").innerText = day + " " + month + " " + year;
-            document.getElementById("lastmod").innerText += lm;
+            document.getElementById("lastmod").innerText += lm.getDate() + "/" + lm.getMonth() + "/" + lm.getFullYear() + " " + addZero(lm.getHours()) + ":" + addZero(lm.getMinutes());
 
             if (hour >= 4 && hour < 12) {
 
@@ -172,47 +182,52 @@
 
         //Esercizio 6
 
-        var flagvalidate = false;
+        var error;
 
         function validate() {
 
-            if (document.forms["testform"]["email"].includes("@") == false) {
+            alerterror = "";
+            document.getElementById("error").innerHTML = "";
 
-                window.alert("Inserisci un'email valida.");
-                document.getElementById("error").innerHTML += "Inserisci un'email valida.<br/>";
+            if (document.getElementById("testform").elements.namedItem("email").value.indexOf("@") == -1) {
 
-            }
-
-            else {
-
-                document.getElementById("error").innerHTML = "";
+                alerterror = "Inserisci un'email valida.";
+                document.getElementById("error").innerHTML = "Inserisci un'email valida.<br/>";
+                window.open("mailerror.html");
 
             }
 
-            if (document.forms["testform"]["number"] == "") {
+            if (document.getElementById("testform").elements.namedItem("number").value == "") {
 
-                window.alert("inserisci un numero di telefono valido.");
+                alerterror += "\nInserisci un numero di telefono valido.";
                 document.getElementById("error").innerHTML += "Inserisci un numero di telefono valido.<br/>";
+                window.open("numbererror.html");
 
             }
 
-            else if (document.getElementById("error").innerHTML != "") {
+            if (!validateRadio(document.getElementById("testform").elements.namedItem("sex"))) {
 
-                document.getElementById("error").innerHTML -= "Inserisci un'email valida.<br/>";
-
-            }
-
-            if (document.forms["testform"]["sex"].unchecked) {
-
-                document.getElementById("error").innerHTML -= "Seleziona un sesso.";
+                alerterror += "\nSeleziona un sesso.";
+                document.getElementById("error").innerHTML += "Seleziona un sesso.";
+                window.open("sexerror.html");
 
             }
 
-            else if (document.getElementById("error").innerHTML != "") {
+            if (alerterror != "")
 
-                document.getElementById("error").innerText -= "Seleziona un sesso.";
+                window.alert(alerterror);
+
+        }
+
+        function validateRadio(sex) {
+
+            for (i = 0; i < sex.length; ++i) {
+
+                if (sex[i].checked) return true;
 
             }
+
+            return false;
 
         }
 
@@ -222,9 +237,9 @@
 
 <!--Esercizio 1-->
 
-<body onload="setbg(); showdate(); //addbookmark();">
+<body onload="setBG(); showDate(); //addbookmark();">
 
-    <!--Ancora nascosta esercizio 6-->
+    <!--Paragrafo esercizio 6-->
     <p id="error"></p>
     <!---->
 
@@ -238,7 +253,7 @@
 
                             else
 
-                                window.setTimeout(setbg, 15000);">Restart</button>
+                                window.setTimeout(setBG, 15000);">Restart</button>
 
         </div>
 
@@ -278,6 +293,7 @@
     </ul>
 
     <!--Esercizio 5-->
+
     <center>
 
         <div id="date"></div>
@@ -291,13 +307,15 @@
 
     <form id="testform" method="POST">
 
-        <input name="email" type="email" placeholder="Email"  /><br />
-        <input name="number" type="text" placeholder="Numero di telefono"  /><br />
-        <input name="creditcard" type="" placeholder="Carta di credito" /><br />
+        <input name="email" type="email" placeholder="Email" /><br />
+        <input name="number" type="tel" placeholder="Numero di telefono" /><br />
+        <input name="creditcard" type="tel" placeholder="Carta di credito" /><br />
         Sesso:<br />
-        <label><input name="sex" type="radio" value="M"  />M</label>
+        <label><input name="sex" type="radio" value="M" />M</label>
         <label><input name="sex" type="radio" value="F" />F</label><br />
-       
+        <!--Non permette la validazione con js
+        <input type="submit" />-->
+
     </form>
 
     <button onclick="validate()">Submit</button>

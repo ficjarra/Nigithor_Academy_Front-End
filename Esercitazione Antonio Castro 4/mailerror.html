@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Errore!</title>
+
+    <script>
+
+        /*Funzione per chiudere la pagina una volta premuta la freccetta per tornare indietro:
+        aprendo una nuova pagina sul browser, ovviamente non è possibile premere la freccetta per tornare indietro.
+        Ho provato ad ovviare a questo problema inserendo un elemento nella cronologia della nuova pagina tramite la funzione history.pushState(state, title, url).
+        Purtroppo però, a quanto pare, qeusta funzione è solita venire riconosciuta, ma ignorata dai browser.*/
+        
+        var state = { 'page_id': 1, 'user_id': 5 };
+
+        history.pushState(state, "Esercizi", "esercitazione.html");
+
+        (function goBack(window, location) {
+
+            history.replaceState(null, document.title, location.pathname + "#!/stealingyourhistory");
+            history.pushState(null, document.title, location.pathname);
+
+            window.addEventListener("popstate", function () {
+
+                if (location.hash === "#!/stealingyourhistory") {
+
+                    history.replaceState(null, document.title, location.pathname);
+
+                    setTimeout(function () {
+
+                        location.replace("esercitazione.html");
+
+                    }, 0);
+
+                }
+
+            }, false);
+
+        }(window, location));
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1 style="color: red">Inserisci un'email valida.</h1>
+
+</body>
+
+</html>
