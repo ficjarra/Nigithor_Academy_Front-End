@@ -1,0 +1,40 @@
+table{
+
+    border: 0.2em solid white;
+    background-color: black;
+    color: white
+
+}
+
+ul{
+
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between
+
+}
+
+a:link{
+
+    color:white
+
+}
+
+a:visited{
+
+    color: white
+
+}
+
+#date{
+
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+    background-color: red;
+    color: white;
+    border: 0.2em solid black;
+    width: 10em
+
+}
+

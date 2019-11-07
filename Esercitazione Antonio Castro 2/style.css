@@ -1,0 +1,70 @@
+div#margin{
+
+	outline: 2px solid black;
+    width: 230px;
+	height: 150px;
+	text-align: center;
+
+}
+
+div#border{
+
+	width: 180px;
+	height: 100px;
+	padding: 10px;
+	background-color: red
+
+}
+
+div#padding{
+	
+	width: 160px;
+	height: 50px;
+	background-color: green;
+	padding: 10px
+
+}
+
+div#content{
+
+	width: 160px;
+	height: 25px;
+	background-color: yellow
+
+}
+
+.hidden{
+
+	display: none
+
+}
+
+li:nth-last-child(3) a:link{
+
+	color: red
+
+}
+
+li:nth-last-child(3) a:visited{
+
+	color: green
+
+}
+
+:target{
+
+	display: block
+
+}
+
+p#selectiontest::selection{
+
+	color: red
+
+}
+
+br::selection{
+
+	color: red
+
+}

@@ -1,0 +1,353 @@
+body{
+
+	margin: 0;
+}
+
+div#external{
+
+	background-image: url(https://ae01.alicdn.com/kf/HTB1jjG0a7CWBuNjy0Faq6xUlXXaT/Artificial-fake-green-grass-Background-Vinyl-cloth-High-quality-Computer-print-wall-photo-backdrop.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	padding-top: 0.3em;
+	padding-bottom: 0.3em
+
+}
+
+div{
+
+	background-color: rgb(217, 217, 217, 0.5);
+	text-align: center
+
+}
+
+.inline{
+
+	display: inline-block;
+	padding-bottom: 0.5%;
+	font-size: 400%;
+	font-family: helvetica, sans-serif;
+	font-weight: 600;
+	position: relative
+
+}
+
+h1#title{
+
+	text-shadow: 0.1em 0.1em 0.25em #FFF;
+	position: relative;
+	bottom: 0.3em
+
+}
+
+.table{
+
+	width: 23.7em;
+	text-align: left
+	
+}
+
+table{
+
+	border-collapse: collapse;
+	font-size: 185%;
+	border: 0.1em groove black;
+	text-align: center;
+	position: relative;
+	top: 0.2em;
+	box-shadow: 0.1em 0.1em 0.1em #000
+
+}
+
+td{
+
+	border: 0.1em groove black
+
+}
+
+th{
+
+	background-color: #00d93a;
+	border: 0.1em groove black
+
+}
+
+td:nth-child(odd){
+
+	background-color: #3366FF
+
+}
+
+td:nth-child(even){
+
+	background-color: #dbdbdb
+
+}
+
+td#c1{
+
+	color: gold;
+	text-shadow: 0.2em 0.15em black
+
+}
+
+td#c2{
+
+	color: silver;
+	text-shadow: 0.2em 0.15em black
+
+}
+
+td#c3{
+
+	color: #912E17;
+	text-shadow: 0.2em 0.2em black
+
+}
+
+h1#scoreboard{
+
+	font-size: 250%;
+	font-family: sans-serif;
+	font-style: italic;
+	text-decoration: underline overline;
+	color: #04004f;
+	width: 10em
+
+}
+
+h1#scoreboard:hover{
+
+	color: gold
+
+}
+
+h1#teams{
+
+	text-align: left;
+	font-size: 250%;
+	font-family: sans-serif;
+	font-style: italic;
+	border-top: 0.3em groove rgb(217, 217, 217, 0.75);
+	border-bottom: 0.3em groove rgb(217, 217, 217, 0.75);
+	color: #04004f
+
+}
+
+h1#teams:hover{
+
+	color: gold
+
+}
+
+h3#subtitle{
+
+	background-color: rgb(217, 217, 217, 0.75); 
+	box-shadow: 0.6em 0.6em 1.2em #c9c9c9;
+	width: 31.25em;
+	margin: 0 auto;
+	position: relative;
+	bottom: 3em
+
+}
+
+div#header{
+
+	height: 11.25em
+
+}
+
+td#messina:before {
+
+    content: 'Me';
+    color: red
+  
+}
+
+td#messina:after {
+
+    content: 'ssina';
+    color: #ffd000
+
+}
+
+td#catania:before {
+
+    content: 'Ca';
+    color: #428af5
+  
+}
+
+td#catania:after {
+
+    content: 'tania';
+    color: red
+
+}
+
+td#nigithor:before {
+
+    content: 'Nigi';
+    color: blue
+  
+}
+
+td#nigithor:after {
+
+    content: 'thor';
+    color: grey
+
+}
+
+button#refresh{
+
+	width: 1.5em;
+	height: 1.5em
+
+}
+
+img#refresh{
+
+	width: 0.9em;
+	height: 0.9em;
+	position: relative;
+	right: 0.3em;
+	top: 0.1em
+
+}
+
+img#logo:hover{
+
+	opacity: 0.5;
+    filter: alpha(opacity=40)
+
+}
+
+img#logo {
+
+    opacity: 1;
+    filter: alpha(opacity=100)
+
+}
+
+div#exteams{
+
+	padding-bottom: 0.5em
+
+}
+
+div.teams {
+
+	padding: 0.3em;
+	display: inline-block;
+	border-top-left-radius: 20%;
+	border-bottom-right-radius: 20%;
+	position: relative;
+	font-size: 133%;
+	width: 28em;
+	height: 8em
+	
+}
+
+div.teams:nth-of-type(1){
+
+	border-top: 0.3em solid #428af5;
+	border-left: 0.3em solid #428af5;
+	border-right: 0.3em solid red;
+	border-bottom: 0.3em solid red
+
+}
+
+div.teams:nth-of-type(1):hover{
+
+	border-top: 0.3em solid red;
+	border-left: 0.3em solid red;
+	border-right: 0.3em solid #428af5;
+	border-bottom: 0.3em solid #428af5
+
+}
+
+div.teams:nth-of-type(2){
+
+	border-top: 0.3em solid red;
+	border-left: 0.3em solid red;
+	border-right: 0.3em solid yellow;
+	border-bottom: 0.3em solid yellow
+
+}
+
+div.teams:nth-of-type(2):hover{
+
+	border-top: 0.3em solid yellow;
+	border-left: 0.3em solid yellow;
+	border-right: 0.3em solid red;
+	border-bottom: 0.3em solid red
+
+}
+
+
+.teams:nth-of-type(3){
+
+	border-top: 0.3em solid blue;
+	border-left: 0.3em solid blue;
+	border-right: 0.3em solid grey;
+	border-bottom: 0.3em solid grey
+
+}
+
+div.teams:nth-of-type(3):hover{
+
+	border-top: 0.3em solid grey;
+	border-left: 0.3em solid grey;
+	border-right: 0.3em solid blue;
+	border-bottom: 0.3em solid blue
+
+}
+
+
+h3.teams{
+
+	font-size: 166%
+
+}
+
+h1#match{
+
+	font-family: sans-serif;
+	color: #04004f;
+	font-size: 220%
+
+}
+
+div.nextmatch{
+
+	width: 30em;
+	border-radius: 15%
+
+}
+
+p#match{
+
+	font-weight: normal;
+	font-size: 66%
+
+}
+
+div#match{
+
+	font-weight: bold;
+	background-color: unset;
+	font-size: 200%
+
+}
+
+@media screen and (max-width: 576px){
+
+	div.teams {
+
+	display: flex;
+	flex-direction: column;
+	align-content: center
+
+	}
+	
+}

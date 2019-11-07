@@ -1,0 +1,166 @@
+div:nth-of-type(1){
+	
+	background-color: red
+
+}
+
+div:nth-of-type(2){
+	
+	background-color: blue
+
+}
+
+div:nth-of-type(3){
+	
+	background-color: green
+
+}
+
+div:nth-of-type(4){
+	
+	background-color: yellow
+
+}
+
+div:nth-of-type(5){
+	
+	background-color: purple
+
+}
+
+section h1{
+
+	color: black
+
+}
+
+section h6{
+
+	color: #646464
+
+}
+
+p{
+
+	text-align: center
+
+}
+
+p:nth-child(even){
+
+	color: #646464
+}
+
+p:nth-child(odd){
+
+	color: #b4b4b4
+}
+
+ul{
+
+ 	background-image: url("https://ssl.cdn.www.miciobao.net/wp-content/uploads/Pastore-maremmano-1.jpg");
+ 	background-repeat: no-repeat;
+ 	background-position: center
+
+}
+
+li:nth-child(even) a:active{
+
+	color: red
+
+}
+
+li:nth-child(even) a:hover{
+
+	color: blue
+
+}
+
+li:nth-child(even) a:link{
+
+	color: pink
+
+}
+
+li:nth-child(odd) a:active{
+
+	color: yellow
+
+}
+
+li:nth-child(odd) a:hover{
+
+	color: green
+
+}
+
+li:nth-child(odd) a:link{
+
+	color: white
+
+}
+
+.container {
+
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 22px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none
+
+}
+
+.container input {
+
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0
+
+}
+
+.checkmark {
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 25px;
+	width: 25px;
+	background-color: red;
+	border-radius: 50%
+
+}
+
+.container input:checked ~ .checkmark {
+
+	background-color: green
+
+}
+
+.divradio{
+
+	float: left
+
+}
+
+label {
+
+ 	float: left;
+	clear: none;
+	display: block;
+	padding: 2px
+
+}
+
+p#grazie{
+
+	text-align: left;
+	color: black
+
+}

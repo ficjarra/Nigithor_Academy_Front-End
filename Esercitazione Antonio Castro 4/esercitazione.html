@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Esercizi</title>
+
+    <script>
+
+        //Esercizio 1
+
+        var colors = ["red", "yellow", "black", "green", "blue"];
+        var i = 0;
+        var timer;
+        var flagtimer;
+
+        function setbg() {
+
+            flagtimer = true;
+
+            if (i == colors.length)
+
+                i = 0;
+
+            document.bgColor = colors[i++];
+
+            timer = window.setTimeout(setbg, 15000)
+
+        }
+
+        function stop() {
+
+            clearTimeout(timer);
+            flagtimer = false;
+
+        }
+
+        /*Esercizio 2
+
+        var chromemozillabookmark = browser.bookmarks.create({
+
+            title: "Pagina di esercizi",
+            url: "file:///D:/Desktop/Robe%20portatili/Projects/Nigithor%20Academy/HTML_XHTML_CSS_JS/Esercitazione%20Antonio%20Castro%204/ex1.html"
+
+        });
+
+        function addbookmark() {
+
+            document.getElementById("bookmark").innerHTML = "<button onclick='chromemozillabookmark'>Aggiungi</button>";
+
+        }*/
+
+        //Esercizio 4
+
+        var user = prompt("Come ti chiami?");
+
+        if (user == null || user == "")
+
+            window.alert("Nessun nome inserito");
+
+        else
+
+            window.alert("Ciao " + user + "!");
+
+        //Esercizio 5
+
+        var lm = document.lastModified;
+        var day = new Date().getDate();
+        var month = new Date().getMonth();
+        var year = new Date().getFullYear();
+        var hour = new Date().getHours();
+
+        function showdate() {
+
+            switch (month) {
+
+                case 1:
+
+                    month = "gennaio";
+                    break;
+
+                case 2:
+
+                    month = "febbraio";
+                    break;
+
+                case 3:
+
+                    month = "marzo";
+                    break;
+
+                case 4:
+
+                    month = "aprile";
+                    break;
+
+                case 5:
+
+                    month = "maggio";
+                    break;
+
+                case 6:
+
+                    month = "giugno";
+                    break;
+
+                case 7:
+
+                    month = "luglio";
+                    break;
+
+                case 8:
+
+                    month = "agosto";
+                    break;
+
+                case 9:
+
+                    month = "settembre";
+                    break;
+
+                case 10:
+
+                    month = "ottobre";
+                    break;
+
+                case 11:
+
+                    month = "novembre";
+                    break;
+
+                case 12:
+
+                    month = "dicembre";
+                    break;
+
+            }
+
+            document.getElementById("date").innerText = day + " " + month + " " + year;
+            document.getElementById("lastmod").innerText += lm;
+
+            if (hour >= 4 && hour < 12) {
+
+                window.status = "Buongiorno, " + user;
+
+            }
+
+            else if (hour >= 12 && hour < 18) {
+
+                window.status = "Buon pomeriggio, " + user;
+
+            }
+
+            else if (hour >= 18 && hour < 23) {
+
+                window.status = "Buonasera, " + user;
+
+            }
+
+            else {
+
+                window.status = "Buonanotte, " + user;
+
+            }
+
+        }
+
+        //Esercizio 6
+
+        var flagvalidate = false;
+
+        function validate() {
+
+            if (document.forms["testform"]["email"].includes("@") == false) {
+
+                window.alert("Inserisci un'email valida.");
+                document.getElementById("error").innerHTML += "Inserisci un'email valida.<br/>";
+
+            }
+
+            else {
+
+                document.getElementById("error").innerHTML = "";
+
+            }
+
+            if (document.forms["testform"]["number"] == "") {
+
+                window.alert("inserisci un numero di telefono valido.");
+                document.getElementById("error").innerHTML += "Inserisci un numero di telefono valido.<br/>";
+
+            }
+
+            else if (document.getElementById("error").innerHTML != "") {
+
+                document.getElementById("error").innerHTML -= "Inserisci un'email valida.<br/>";
+
+            }
+
+            if (document.forms["testform"]["sex"].unchecked) {
+
+                document.getElementById("error").innerHTML -= "Seleziona un sesso.";
+
+            }
+
+            else if (document.getElementById("error").innerHTML != "") {
+
+                document.getElementById("error").innerText -= "Seleziona un sesso.";
+
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<!--Esercizio 1-->
+
+<body onload="setbg(); showdate(); //addbookmark();">
+
+    <!--Ancora nascosta esercizio 6-->
+    <p id="error"></p>
+    <!---->
+
+    <center>
+
+        <div>
+
+            <button onclick="stop()">Stop</button>
+
+            <button onclick="if(flagtimer == true){}
+
+                            else
+
+                                window.setTimeout(setbg, 15000);">Restart</button>
+
+        </div>
+
+        <!--Esercizio 2-->
+
+        <div>
+
+            <table>
+
+                <tr>
+
+                    <th>Aggiungi la pagina ai preferiti!</th>
+
+                </tr>
+
+                <tr>
+
+                    <td id="bookmark">Premi CTRL+D per salvare la pagina nei segnalibri.</td>
+
+                </tr>
+
+            </table>
+
+        </div>
+
+    </center>
+    <!--Esercizio 3-->
+
+    <ul>
+
+        <li><a href="javascript:window.history.back()">Torna alla pagina precedente</a></li>
+        <li><a href="javascript:window.history.go(-3)">Torna indietro di tre pagine</a></li>
+        <li><a href="javascript:window.history.go(-4)">Torna indietro di quattro pagine</a></li>
+        <li><a href="javascript:window.history.go(-2)">Torna indietro di due pagine</a></li>
+        <li><a href="javascript:window.history.go(-5)">Torna indietro di cinque pagine</a></li>
+
+    </ul>
+
+    <!--Esercizio 5-->
+    <center>
+
+        <div id="date"></div>
+        <div id="lastmod">Ultima modifica:<br />
+
+        </div>
+
+    </center>
+
+    <!--Esercizio 6-->
+
+    <form id="testform" method="POST">
+
+        <input name="email" type="email" placeholder="Email"  /><br />
+        <input name="number" type="text" placeholder="Numero di telefono"  /><br />
+        <input name="creditcard" type="" placeholder="Carta di credito" /><br />
+        Sesso:<br />
+        <label><input name="sex" type="radio" value="M"  />M</label>
+        <label><input name="sex" type="radio" value="F" />F</label><br />
+       
+    </form>
+
+    <button onclick="validate()">Submit</button>
+
+</body>
+
+</html>

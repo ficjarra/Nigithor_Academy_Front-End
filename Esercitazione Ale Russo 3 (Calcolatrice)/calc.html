@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html lang="it">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+	<link rel="icon" href="http://icons.iconarchive.com/icons/fasticon/hand-draw-iphone/256/Calculator-icon.png">
+
+	<title>Calcolatrice magica</title>
+
+	<script>
+
+		var flag = false;
+		var flag2 = false;
+
+		function insert(id) {
+
+			if (flag == true)
+
+				document.getElementById("operations").value = "";
+
+			document.getElementById("operations").value += id;
+			flag = false;
+
+		}
+
+		function calculate() {
+
+			var op = document.getElementById("operations").value.split(" ");
+			var result = "Errore";
+			console.log(op);
+
+			switch (op[1]) {
+
+				case "+":
+
+					result = parseFloat(op[0]) + parseFloat(op[2]);
+					break;
+
+				case "-":
+
+					result = parseFloat(op[0]) - parseFloat(op[2]);
+					break;
+
+				case "*":
+
+					result = parseFloat(op[0]) * parseFloat(op[2]);
+					break;
+
+				case "/":
+
+					result = parseFloat(op[0]) / parseFloat(op[2]);
+					break;
+
+				default:
+
+					alert("Errore!");
+
+			}
+
+			if (isNaN(result)) {
+
+				document.getElementById("operations").value = "Errore";
+				alert("Errore!");
+
+			}
+
+			else
+
+				document.getElementById("operations").value = result;
+
+			flag = true;
+
+		}
+
+		function operators(id) {
+
+			if (flag2 == false) {
+
+				insert(id);
+				flag2 = true;
+
+			}
+
+			else {
+
+				calculate();
+				flag2 = false;
+
+			}
+
+		}
+
+		function cancel() {
+
+			document.getElementById("operations").value = "";
+
+		}
+
+		/*Alternativa alla funzione
+
+		function calculate(){
+
+			document.getElementById("operations").value = eval(document.getElementById("operations"));
+
+		}
+
+		Questa versione permette di eseguire più operazioni sulla stessa "linea", ma utilizza eval, funzione fortemente sconsigliata per motivi di sicurezza e stabilità del codice; eval is evil.*/
+
+	</script>
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1>Calcolatrice magica</h1>
+		<h3>(Da oggi senza eval)</h3>
+
+		<div class="calculator">
+
+			<div>
+
+				<input type="text" name="display" id="operations" placeholder="Esegui un'operazione..." class="display"
+					onkeydown="if (event.keyCode == 13)
+                        			document.getElementById('=').click()" />
+
+			</div>
+
+			<div class="content">
+
+				<div class="content">
+
+					<input type="submit" id="7" value="7" onclick="insert(this.id)" class="button" />
+					<input type="submit" id="8" value="8" onclick="insert(this.id)" class="button" />
+					<input type="submit" id="9" value="9" onclick="insert(this.id)" class="button" />
+					<input type="submit" id=" + " value="+" onclick="operators(this.id)" class="button" />
+					<br />
+					<input type="submit" id="4" value="4" onclick="insert(this.id)" class="button" />
+					<input type="submit" id="5" value="5" onclick="insert(this.id)" class="button" />
+					<input type="submit" id="6" value="6" onclick="insert(this.id)" class="button" />
+					<input type="submit" id=" - " value="-" onclick="operators(this.id)" class="button" />
+					<br />
+					<input type="submit" id="1" value="1" onclick="insert(this.id)" class="button" />
+					<input type="submit" id="2" value="2" onclick="insert(this.id)" class="button" />
+					<input type="submit" id="3" value="3" onclick="insert(this.id)" class="button" />
+					<input type="submit" id=" * " value="x" onclick="operators(this.id)" class="button" />
+					<br />
+					<input type="submit" value="C" onclick="cancel()" class="button" />
+					<input type="submit" id="0" value="0" onclick="insert(this.id)" class="button" />
+					<input type="submit" id="." value="." onclick="insert(this.id)" class="button" />
+					<input type="submit" id=" / " value="÷" onclick="operators(this.id)" class="button" />
+					<br />
+					<button value="=" id="=" onclick="calculate()" class="button">=</button>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+
+</html>

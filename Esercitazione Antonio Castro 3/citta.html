@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+	<meta charset="UTF-8">
+
+	<title>Esercitazione</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script>
+
+		$(document).ready(function () {
+
+			console.log("\u2b50");
+
+			$('#move').on('click', function () {
+
+				move();
+
+			});
+
+		});
+
+		function move() {
+
+			var town = document.getElementById("towns").firstElementChild;
+
+			document.getElementById("towns").removeChild(town);
+
+			document.getElementById("towns").appendChild(town);
+
+		}
+
+		function insert() {
+
+			var newtown = document.createElement("li");
+			newtown.innerText = "Bergamo";
+
+			document.getElementById("towns").insertBefore(newtown, document.getElementById("towns").childNodes[Math.floor(Math.random() * document.getElementById("towns").childNodes.length)]);
+
+		}
+
+	</script>
+
+</head>
+
+<body>
+
+	<div>
+
+		<ol id="towns">
+
+			<li>Messina</li>
+			<li>Palermo</li>
+			<li>Padova</li>
+			<li>Mantova</li>
+			<li>Milano</li>
+			<li>Roma</li>
+			<li>Cosenza</li>
+			<li>Firenze</li>
+			<li>Caserta</li>
+			<li>Napoli</li>
+
+		</ol>
+
+		<button type="button" id="move">Sposta</button>
+		<button type="button" onclick="insert()">Inserisci</button>
+
+</body>
+
+</html>

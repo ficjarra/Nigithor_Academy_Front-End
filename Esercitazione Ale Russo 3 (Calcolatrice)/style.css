@@ -1,0 +1,72 @@
+body{
+  
+  margin: 0
+
+}
+
+h1{
+   
+  font-family: Arial, sans-serif;
+  font-size: 4em;
+  font-weight: bold;
+  background: -webkit-linear-gradient(#17fbff, #ff0d0d);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /*Purtroppo solo webkit, volevo provare a creare un testo del genere*/
+  
+}
+
+h3{
+  
+  position: relative;
+  bottom: 3em
+  
+}
+
+.container{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #404040;
+
+}
+
+.button{
+
+  color: #404040;
+  font-size: 183%;
+  border: 0.15em solid black;
+  border-collapse: collapse;
+  height: 2em;
+  width: 2em
+
+}
+
+button[value = "="].button{
+
+  width: 8.4em
+
+}
+
+.display{
+
+  padding-left: 0.1em;
+  background-color: #FFF;
+  color: darkgreen;
+  font-size: 110%;
+  border: 0.15em solid #000;
+  width: 13.6em;
+  height: 2em
+
+}
+
+.calculator{
+
+  border: 0.3em solid black;
+  border-collapse: collapse;
+  margin: 3em 0
+
+}
